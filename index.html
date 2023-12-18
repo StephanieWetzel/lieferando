@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="./img/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Saugut!</title>
+    <script src="script.js"></script>
+</head>
+
+<body onload="renderDishes(), renderBasket(), dishesAnchors(), closeFoldableBasket()">
+    <div id="navbar" class="navbar">
+        <div class="logo">
+            <img onclick="location.reload()" class="logoImg" src="./img/favicon.png" alt="Schwein">
+            <i>
+                <a href="index.html">
+                    <h2>Saugut!</h2>
+                </a>
+            </i>
+        </div>
+        <span>Speisekarte</span>
+        <div>
+            <img class="languageSymbol" src="./img/german_flag.png" alt="Deutschlandfahne">
+            <img class="burgerMenu" src="./img/menu_white.png" alt="Burger Menü">
+        </div>
+    </div>
+
+    <div class="mainHTML">
+        <div id="leftContainer" class="leftContainer">
+            <img class="headerImg" src="./img/header.jpg" alt="Pizza">
+
+            <div class="restaurantInfoContainer">
+                <div class="headerContainer">
+                    <h1>Saugut!</h1>
+                    <div class="symbolsContainer">
+                        <img class="headerSymbols" src="./img/info.png" alt="i-Zeichen">
+                        <img class="headerSymbols" src="./img/heart.png" alt="Herz">
+                    </div>
+                </div>
+
+                <div class="ratingContainer">
+                    <img class="star" src="./img/star_gold.png" alt="Stern">
+                    <img class="star" src="./img/star_gold.png" alt="Stern">
+                    <img class="star" src="./img/star_gold.png" alt="Stern">
+                    <img class="star" src="./img/star_gold.png" alt="Stern">
+                    <img class="star" src="./img/star_gold.png" alt="Stern">
+                    <span class="ratingText">130 Bewertungen</span>
+                </div>
+
+                <div class="deliveryInfo">
+                    <img class="clock" src="./img/clock.png" alt="Uhr">
+                    <span class="deliveryText">Lieferung ab 16:00 Uhr</span>
+                    <div class="divider"></div>
+                    <img class="bike" src="./img/bike.png" alt="Fahrrad">
+                    <span class="deliveryText deliveryTextGreen">Kostenlos</span>
+                    <div class="divider"></div>
+                    <img class="cart" src="./img/shopping_cart.png" alt="Einkaufswagen">
+                    <span class="deliveryText">Min. 20,00 €</span>
+                </div>
+
+                <div id="dishesAnchors" class="dishVariations">
+                </div>
+            </div>
+
+            <div id="content" class="restaurantDishesContainer">
+            </div>
+        </div>
+
+        <div id="basketContainer" class="basketContainer foldableBasket">
+            <div class="baskedFixed">
+                <!-- for foldable Basket -->
+                <div id="basketHeadingContainer" class="basketHeadingContainer">
+                    <h2 class="basketHeading">Warenkorb</h2>
+                    <img onclick="closeFoldableBasket()" id="close" class="closeSign d-none" src="./img/close.png"
+                        alt="X">
+                </div>
+
+                <div id="basket" class="basket">
+                    <div><img class="shoppingCart" src="./img/shopping_cart.png" alt="Einkaufswagen"></div>
+                    <h2>Fülle deinen Warenkorb</h2>
+                    <span>Füge einige leckere Gerichte aus der Speisekarte hinzu und bestelle dein Essen.</span>
+                </div>
+
+                <div id="checkout" class="checkoutContainer">
+                </div>
+
+                <button id="payBtn" class="d-none" onclick="pay()">Bezahlen</button>
+            </div>
+        </div>
+    </div>
+    <!-- responsive basket -->
+    <div id="responsiveBasket" class="responsiveBasket">
+        <button id="responsiveBasketBtn" onclick="openFoldableBasket()" class="responsiveBasketBtn">
+            <img class="responsiveShoppingCartImg" src="./img/shopping_cart_white.png" alt="Einkaufswagen">
+            Warenkorb
+        </button>
+    </div>
+</body>
+
+</html>
